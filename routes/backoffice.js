@@ -5,12 +5,16 @@
 
 const express = require("express");
 const router = express.Router();
+
 const formidable = require("express-formidable");
 router.use(formidable());
 
 const Event = require("../models/Event");
 
+//create event's route:
+//------------------------
 router.post("/backoffice/create-event", async (req, res) => {
+  console.log(req.fields);
   try {
     //event creation
     const newEvent = new Event({
@@ -25,8 +29,9 @@ router.post("/backoffice/create-event", async (req, res) => {
     });
     //save new event
     await newEvent.save();
-    res.json({
+    res.status(200).json({
       _id: newEvent._id,
+      message: "Event created, saved and published",
       title: newEvent.title,
       date: newEvent.date,
       time: newEvent.time,
@@ -38,6 +43,7 @@ router.post("/backoffice/create-event", async (req, res) => {
       programme: newEvent.programme,
     });
   } catch (error) {
+    console.log(error.message);
     res.status(400).json({
       error: error.message,
     });

@@ -6,6 +6,8 @@ const app = express();
 const formidable = require("express-formidable");
 app.use(formidable());
 
+//cors policies:
+//------------------------
 const cors = require("cors");
 app.use(cors());
 
@@ -16,8 +18,8 @@ mongoose.connect(process.env.MONGODB_URI);
 
 //routes structure:
 //------------------------
-const backoffice = require("./routes/backoffice");
-app.use(backoffice);
+const backofficeRoutes = require("./routes/backoffice");
+app.use(backofficeRoutes);
 
 app.all("*", function (req, res) {
   res.json({ message: "Page not found" });
