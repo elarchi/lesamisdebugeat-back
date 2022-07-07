@@ -5,7 +5,6 @@ const Event = mongoose.model("Event", {
   date: String,
   time: String,
   location: String,
-  author: String,
   URLpictures: Array,
   description: String,
   price: Number,

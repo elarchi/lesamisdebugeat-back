@@ -18,7 +18,6 @@ router.post("/backoffice/create-event", async (req, res) => {
       date: req.fields.date,
       time: req.fields.time,
       location: req.fields.location,
-      author: req.fields.author,
       URLpictures: req.fields.URLpictures,
       description: req.fields.description,
       price: req.fields.price,
