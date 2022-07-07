@@ -8,7 +8,7 @@ const router = express.Router();
 const formidable = require("express-formidable");
 router.use(formidable());
 
-const Event = require("..models/Event");
+const Event = require("../models/Event");
 
 router.post("/backoffice/create-event", async (req, res) => {
   try {
