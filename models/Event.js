@@ -9,7 +9,6 @@ const Event = mongoose.model("Event", {
   URLpictures: Array,
   description: String,
   price: Number,
-  reservationLink: String,
   programme: String,
 });
 
