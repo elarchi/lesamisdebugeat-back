@@ -16,6 +16,9 @@ mongoose.connect(process.env.MONGODB_URI);
 
 //routes structure:
 //------------------------
+const backoffice = require("./routes/backoffice");
+app.use(backoffice);
+
 app.all("*", function (req, res) {
   res.json({ message: "Page not found" });
 });
