@@ -2,4 +2,4 @@
 
 ## Installation
 
-npm i dotenv express express-formidable
+npm i dotenv express express-formidable mongoose
