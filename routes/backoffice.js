@@ -12,6 +12,7 @@ const Event = require("..models/Event");
 
 router.post("/backoffice/create-event", async (req, res) => {
   try {
+    //event creation
     const newEvent = new Event({
       title: req.fields.title,
       date: req.fields.date,
@@ -23,5 +24,25 @@ router.post("/backoffice/create-event", async (req, res) => {
       price: req.fields.price,
       programme: req.fields.programme,
     });
-  } catch {}
+    //save new event
+    await newEvent.save();
+    res.json({
+      _id: newEvent._id,
+      title: newEvent.title,
+      date: newEvent.date,
+      time: newEvent.time,
+      location: newEvent.location,
+      author: newEvent.author,
+      URLpictures: newEvent.URLpictures,
+      description: newEvent.description,
+      price: newEvent.price,
+      programme: newEvent.programme,
+    });
+  } catch (error) {
+    res.status(400).json({
+      error: error.message,
+    });
+  }
 });
+
+module.exports = router;
