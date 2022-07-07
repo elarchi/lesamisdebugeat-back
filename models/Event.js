@@ -12,3 +12,5 @@ const Event = mongoose.model("Event", {
   reservationLink: String,
   programme: String,
 });
+
+module.exports = Event;
