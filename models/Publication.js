@@ -7,8 +7,7 @@ const Publication = mongoose.model("Publication", {
   edition: String,
   description: String,
   price: Number,
-  reservationLink: String,
+  URLreservation: String,
 });
 
 module.exports = Publication;
-s;

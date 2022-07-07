@@ -18,6 +18,12 @@ mongoose.connect(process.env.MONGODB_URI);
 
 //routes structure:
 //------------------------
+app.get("/", (req, res) => {
+  res.status(200).json({
+    message: "Welcome on 'lesamisdebugeat' API",
+  });
+});
+
 const backofficeRoutes = require("./routes/backoffice");
 app.use(backofficeRoutes);
 
