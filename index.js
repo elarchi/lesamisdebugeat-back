@@ -16,7 +16,7 @@ app.use(cors());
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI);
 
-//routes structure:
+//routes'structure:
 //------------------------
 app.get("/", (req, res) => {
   res.status(200).json({
