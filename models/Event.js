@@ -10,7 +10,7 @@ const Event = mongoose.model("Event", {
   price: Number,
   programme: String,
   carousel: Boolean,
-  comongSoonEvent: Boolean,
+  comingSoonEvent: Boolean,
 });
 
 module.exports = Event;
