@@ -11,6 +11,7 @@ const Event = mongoose.model("Event", {
   programme: String,
   carousel: Boolean,
   comingSoonEvent: Boolean,
+  URLprogrammation: String,
 });
 
 module.exports = Event;
