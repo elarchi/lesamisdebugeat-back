@@ -9,8 +9,7 @@ const Event = mongoose.model("Event", {
   description: String,
   price: Number,
   programme: String,
-  carousel: Boolean,
-  comingSoonEvent: Boolean,
+  display: { carousel: Boolean, comingSoonEvent: Boolean },
   URLprogrammation: String,
 });
 
