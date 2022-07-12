@@ -19,6 +19,9 @@ mongoose.connect(process.env.MONGODB_URI);
 const backofficeRoutes = require("./routes/backoffice");
 app.use(backofficeRoutes);
 
+const eventsRoutes = require("./routes/events");
+app.use(eventsRoutes);
+
 app.get("/", (req, res) => {
   res.status(200).json({
     message: "Welcome on 'lesamisdebugeat' API",
