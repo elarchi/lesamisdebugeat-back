@@ -26,7 +26,11 @@ router.post("/backoffice/create-event", async (req, res) => {
       URLpictures: req.fields.URLpictures,
       description: req.fields.description,
       price: req.fields.price,
-      programme: req.fields.programme,
+      URLprogramme: req.fields.URLprogramme,
+      display: {
+        carousel: req.fields.display.carousel,
+        comingSoonEvent: req.fields.display.comingSoonEvent,
+      },
     });
     //save new event
     await newEvent.save();
@@ -41,7 +45,11 @@ router.post("/backoffice/create-event", async (req, res) => {
       URLpictures: newEvent.URLpictures,
       description: newEvent.description,
       price: newEvent.price,
-      programme: newEvent.programme,
+      URLprogramme: newEvent.URLprogramme,
+      display: {
+        carousel: newEvent.carousel,
+        comingSoonEvent: newEvent.comingSoonEvent,
+      },
     });
   } catch (error) {
     console.log(error.message);
