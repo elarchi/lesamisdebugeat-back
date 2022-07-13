@@ -27,4 +27,15 @@ router.get("/all-events", async (req, res) => {
   }
 });
 
+//get a specific event
+router.get("/event/:id", async (req, res) => {
+  try {
+    const event = await Event.findById(req.params.id);
+    res.status(200).json(event);
+  } catch (error) {
+    console.log(error.message);
+    res.status(400).json({ message: error.message });
+  }
+});
+
 module.exports = router;
