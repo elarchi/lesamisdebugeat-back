@@ -4,7 +4,6 @@ const Member = mongoose.model("Member", {
   firstname: String,
   lastname: String,
   localAdresse: String,
-
   otherAdresse: String,
   telephone: String,
   email: String,
