@@ -3,8 +3,9 @@ const mongoose = require("mongoose");
 const Member = mongoose.model("Member", {
   firstname: String,
   lastname: String,
-  mainAdresse: String,
   localAdresse: String,
+
+  otherAdresse: String,
   telephone: String,
   email: String,
   display: {
@@ -16,6 +17,8 @@ const Member = mongoose.model("Member", {
     },
   },
   hasPaid: Boolean,
+  URLavatar: String,
+  photographyPermisison: Boolean,
 });
 
 module.exports = Member;
