@@ -25,6 +25,9 @@ app.use(eventsRoutes);
 const publicationsRoutes = require("./routes/publications");
 app.use(publicationsRoutes);
 
+const membersRoutes = require("./routes/members");
+app.use(membersRoutes);
+
 app.get("/", (req, res) => {
   res.status(200).json({
     message: "Welcome on 'lesamisdebugeat' API",
